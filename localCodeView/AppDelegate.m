@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "LoginViewController.h"
+#import <SMS_SDK/SMSSDK.h>
 
 @interface AppDelegate ()
 
@@ -16,7 +18,19 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    //注册短信验证码应用
+    [SMSSDK registerApp:@"1af599ac74254" withSecret:@"829a9c485d2353791109e25bd452a489"];
+    
+    UIWindow *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window = window;
+    
+    LoginViewController *loginVC = [[LoginViewController alloc] init];
+    
+    self.window.rootViewController = loginVC;
+    
+    [self.window makeKeyAndVisible];
+    
+    
     return YES;
 }
 
