@@ -1,0 +1,2 @@
+# localCodeView
+通过MOB的SMSSDK实现手机短信验证码的登录和注册功能
